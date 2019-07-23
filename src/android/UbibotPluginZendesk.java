@@ -13,6 +13,7 @@ import java.util.List;
 
 import zendesk.core.AnonymousIdentity;
 import zendesk.core.Identity;
+import zendesk.core.JwtIdentity;
 import zendesk.support.Support;
 import zendesk.support.guide.HelpCenterActivity;
 import zendesk.support.guide.ViewArticleActivity;
@@ -46,6 +47,7 @@ public class UbibotPluginZendesk extends CordovaPlugin {
 
     private static final String ACTION_INITIALIZE = "initialize";
     private static final String ACTION_SET_ANONYMOUS_IDENTITY = "setAnonymousIdentity";
+    private static final String ACTION_SET_UNIQUE_IDENTITY = "setUniqueIdentity";
     private static final String ACTION_SHOW_HELP_CENTER = "showHelpCenter";
     private static final String ACTION_SHOW_HELP_CENTER_ARTICLE = "showHelpCenterArticle";
     private static final String ACTION_SHOW_TICKET_REQUEST = "showTicketRequest";
@@ -69,6 +71,12 @@ public class UbibotPluginZendesk extends CordovaPlugin {
 
             Identity identity = new AnonymousIdentity.Builder().withNameIdentifier(name).withEmailIdentifier(email)
                     .build();
+
+            zendesk.core.Zendesk.INSTANCE.setIdentity(identity);
+        } else if (ACTION_SET_UNIQUE_IDENTITY.equals(action)) {
+            String unique_id = args.getString(0);
+
+            Identity identity = new JwtIdentity(unique_id);
 
             zendesk.core.Zendesk.INSTANCE.setIdentity(identity);
         } else if (ACTION_SHOW_HELP_CENTER.equals(action)) {

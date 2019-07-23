@@ -32,6 +32,18 @@ UbibotPluginZendesk.prototype.setAnonymousIdentity = function (name, email, succ
     exec(successCallback, errorCallback, 'UbibotPluginZendesk', 'setAnonymousIdentity', [name, email]);
 }
 
+
+/**
+ * Sets an unique user identity for tracking the user
+ *
+ * @param unique_id The unique_id of the user (optional)
+ * @param successCallback The callback to be executed upon command success
+ * @param errorCallback The callback to be executed upon command failure
+ */
+UbibotPluginZendesk.prototype.setUniqueIdentity = function (unique_id, successCallback, errorCallback) {
+    exec(successCallback, errorCallback, 'UbibotPluginZendesk', 'setUniqueIdentity', [unique_id]);
+}
+
 /**
  * Opens a native view for viewing the help center
  *

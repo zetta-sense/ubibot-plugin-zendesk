@@ -36,6 +36,19 @@
   [self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_OK] callbackId:command.callbackId]; 
 }
 
+- (void)setUniqueIdentity:(CDVInvokedUrlCommand *)command { 
+  NSString *unique_id = [command.arguments objectAtIndex:0];
+
+  if ([unique_id isKindOfClass:[NSNull class]]) {
+    unique_id = nil;
+  }
+  
+  id<ZDKObjCIdentity> userIdentity = [[ZDKObjCJwt alloc] initWithToken:unique_id];
+  [[ZDKZendesk instance] setIdentity:userIdentity];
+
+  [self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_OK] callbackId:command.callbackId]; 
+}
+
 - (void)showHelpCenter:(CDVInvokedUrlCommand *)command {
   ZDKHelpCenterUiConfiguration *helpCenterConfig = [ZDKHelpCenterUiConfiguration new];
   
