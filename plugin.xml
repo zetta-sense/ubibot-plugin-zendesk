@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="ubibot-plugin-zendesk" version="0.1.0" 
+    xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>UbibotPluginZendesk</name>
+    <js-module name="UbibotPluginZendesk" src="www/UbibotPluginZendesk.js">
+        <clobbers target="cordova.plugins.UbibotPluginZendesk" />
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="UbibotPluginZendesk">
+                <param name="android-package" value="ubibot-plugin-zendesk.UbibotPluginZendesk" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml" />
+        <source-file src="src/android/UbibotPluginZendesk.java" target-dir="src/ubibot-plugin-zendesk/UbibotPluginZendesk" />
+    </platform>
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="UbibotPluginZendesk">
+                <param name="ios-package" value="UbibotPluginZendesk" />
+            </feature>
+        </config-file>
+        <source-file src="src/ios/UbibotPluginZendesk.m" />
+    </platform>
+</plugin>

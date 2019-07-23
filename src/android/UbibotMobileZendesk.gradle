@@ -1,0 +1,18 @@
+// Note that this is root level repositories container and not the one under 'buildScript'
+
+repositories {
+    maven { url 'https://zendesk.jfrog.io/zendesk/repo' }
+}
+
+dependencies {
+    // 需要用这个版本，目测3+的需要support和appcompat等lib到v28
+    implementation group: 'com.zendesk', name: 'support', version: '2.2.1'
+    // implementation group: 'com.zendesk', name: 'support', version: '3.0.1'
+}
+
+
+// configurations.all {
+//     resolutionStrategy {/a
+//         force 'com.android.support:support-v4:27.+'
+//     }
+// }
