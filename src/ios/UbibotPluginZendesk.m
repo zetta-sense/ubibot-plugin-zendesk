@@ -1,11 +1,11 @@
 /********* UbibotPluginZendesk.m Cordova Plugin Implementation *******/
 
-#import "UbibotMobilePlugin.h"
+#import "UbibotPluginZendesk.h"
 
 @import ZendeskSDK;
 @import ZendeskCoreSDK;
 
-@implementation UbibotMobileZendesk
+@implementation UbibotPluginZendesk
 
 - (void)initialize:(CDVInvokedUrlCommand *)command {
   NSString *appId = [command.arguments objectAtIndex:0];

@@ -23,7 +23,7 @@ import zendesk.support.requestlist.RequestListActivity;
 /**
  * This class echoes a string called from JavaScript.
  */
-public class UbibotMobileZendesk extends CordovaPlugin {
+public class UbibotPluginZendesk extends CordovaPlugin {
 
     // @Override
     // public boolean execute(String action, JSONArray args, CallbackContext

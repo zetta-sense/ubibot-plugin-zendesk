@@ -1,6 +1,6 @@
 #import <Cordova/CDVPlugin.h>
 
-@interface UbibotMobileZendesk : CDVPlugin
+@interface UbibotPluginZendesk : CDVPlugin
 
 - (void)initialize:(CDVInvokedUrlCommand *)command;
 - (void)setAnonymousIdentity:(CDVInvokedUrlCommand *)command;
