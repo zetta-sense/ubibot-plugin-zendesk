@@ -6,21 +6,37 @@
     <js-module name="UbibotPluginZendesk" src="www/UbibotPluginZendesk.js">
         <clobbers target="cordova.plugins.UbibotPluginZendesk" />
     </js-module>
+
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="UbibotPluginZendesk">
-                <param name="android-package" value="ubibot-plugin-zendesk.UbibotPluginZendesk" />
+                <param name="android-package" value="com.cloudforce.ubibot.UbibotPluginZendesk" />
+                <param name="onload" value="true" />
             </feature>
         </config-file>
-        <config-file parent="/*" target="AndroidManifest.xml" />
-        <source-file src="src/android/UbibotPluginZendesk.java" target-dir="src/ubibot-plugin-zendesk/UbibotPluginZendesk" />
+
+        <!-- <config-file parent="/*" target="AndroidManifest.xml" /> -->
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity android:name="zendesk.support.guide.HelpCenterActivity" android:theme="@style/Base.Theme.AppCompat" />
+            <activity android:name="zendesk.support.guide.ViewArticleActivity" android:theme="@style/Base.Theme.AppCompat" />
+            <activity android:name="zendesk.support.requestlist.RequestListActivity" android:theme="@style/Base.Theme.AppCompat" />
+            <activity android:name="zendesk.support.request.RequestActivity" android:theme="@style/Base.Theme.AppCompat" />
+        </config-file>
+
+        <source-file src="src/android/UbibotPluginZendesk.java" target-dir="src/com/cloudforce/ubibot/UbibotPluginZendesk" />
+
+        <framework custom="true" src="src/android/UbibotPluginZendesk.gradle" type="gradleReference" />
     </platform>
+
     <platform name="ios">
         <config-file parent="/*" target="config.xml">
             <feature name="UbibotPluginZendesk">
                 <param name="ios-package" value="UbibotPluginZendesk" />
             </feature>
         </config-file>
+
+        <header-file src="src/ios/UbibotPluginZendesk.h" />
         <source-file src="src/ios/UbibotPluginZendesk.m" />
     </platform>
 </plugin>

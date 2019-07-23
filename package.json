@@ -1,0 +1,27 @@
+{
+  "name": "ubibot-plugin-zendesk",
+  "version": "0.1.0",
+  "description": "ubibot plguin for zendesk",
+  "cordova": {
+    "id": "ubibot-plugin-zendesk",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zetta-sense/ubibot-plugin-zendesk.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "author": "gorebill",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zetta-sense/ubibot-plugin-zendesk/issues"
+  },
+  "homepage": "https://github.com/zetta-sense/ubibot-plugin-zendesk#readme"
+}
